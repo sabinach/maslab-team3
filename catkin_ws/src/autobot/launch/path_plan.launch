@@ -1,0 +1,20 @@
+<launch>
+    <include file="$(find autobot)/launch/hector_slam.launch" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find map_server)/test/testmap.yaml"/>
+
+  <test test-name="map_server_test" pkg="map_server" type="rtest"/>
+    <node pkg="autobot" name="astar" type="astar.py" output="screen"/>
+    <node pkg="autobot" name="camera_edit" type="camera_edit.py" output="screen"/>
+    <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui"/>
+
+
+   <node pkg="sensor_node_pkg" type="PointCloud" name="slam_cloud" output="screen">
+    <param name="sensor_param" value="param_value" />
+ </node>
+ <node pkg="odom_node_pkg" type="odom_node_type" name="odom_node" output="screen">
+    <param name="odom_param" value="param_value" />
+ </node>
+ <node pkg="transform_configuration_pkg" type="transform_configuration_type" name="transform_configuration_name" output="screen">
+    <param name="transform_configuration_param" value="param_value" />
+ </node>
+</launch>

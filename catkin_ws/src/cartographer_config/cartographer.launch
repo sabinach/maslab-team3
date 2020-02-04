@@ -1,0 +1,24 @@
+<!-- Launches google cartographer -->
+<!-- To Run:
+        roslaunch cartographer_config cartographer.launch
+-->
+
+<launch>
+
+  <!-- launch lidar -->
+  <include file="$(find autobot)/launch/lidar.launch" />
+
+  <!-- Launch cartographer_ros -->
+  <node name="cartographer_node" pkg="cartographer_ros"  type="cartographer_node"
+        args="  -configuration_directory $(find cartographer_config)
+                -configuration_basename autobot.lua"
+        output="screen">
+  </node>
+
+  <!-- Launch cartographer map -->
+  <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros" type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
+
+  <!-- Launch rviz. Based off of: args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" -->
+  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find autobot)/rviz/cartographer.rviz" />
+
+</launch>

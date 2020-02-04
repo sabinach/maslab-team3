@@ -1,0 +1,30 @@
+<!-- Launch gamepad teleoperation to drive semibot -->
+<!-- Launch file equivalent to basically running these commands on terminal:
+        roslaunch joy joy_node.launch
+        rosrun autobot semibot.py
+        rosrun autobot gamepad_driver.py
+        rosrun autobot gamepad_mux.py
+        rosrun autobot auto_driver.py
+-->
+<!-- To run: roslaunch autobot teleop.launch -->
+
+<launch>
+
+  <!-- Launch the gamepad -->
+  <node pkg="joy" name="joy_node" type="joy_node"/>
+
+  <!-- SemiBot -->
+  <node pkg="autobot" name="semibot" type="semibot.py" output="screen" />
+
+  <!-- Gamepad -->
+  <node pkg="autobot" name="gamepad_driver" type="gamepad_driver.py" output="screen" />
+  <node pkg="autobot" name="gamepad_mux" type="gamepad_mux.py" output="screen"/>
+
+  <!-- Autonomous -->
+  <!--<node pkg="autobot" name="auto_driver" type="auto_driver.py" output="screen"/>-->
+
+  <!-- Uncomment to enable by default -->
+  <!-- <include file="$(find autobot)/launch/camera.launch" /> -->
+  <!-- <include file="$(find autobot)/launch/hector_slam.launch" /> -->
+
+</launch>

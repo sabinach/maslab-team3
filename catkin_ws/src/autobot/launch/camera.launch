@@ -1,0 +1,14 @@
+<!-- Launches camera publisher, camera editer, and rqt -->
+<!-- Launch file equivalent to basically running these commands on terminal:
+        roscore
+        rosrun autobot camera_pub.py
+        rosrun autobot camera_edit.py
+-->
+<!-- To run: roslaunch autobot camera.launch -->
+
+<launch>
+
+    <node pkg="autobot" name="camera_pub" type="camera_pub.py" output="screen"/>
+    <node pkg="autobot" name="camera_edit" type="camera_edit.py" output="screen"/>
+    
+</launch>

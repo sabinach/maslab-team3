@@ -1,0 +1,25 @@
+<!-- Launch semibot for competition! -->
+<!-- Launch file equivalent to basically running these commands on terminal:
+        roslaunch autobot teleop.launch
+        roslaunch autobot camera.launch
+        roslaunch autobot auto_driver.launch
+        roslaunch autobot auto_sorter.launch
+-->
+<!-- To run: roslaunch autobot competition.launch -->
+
+<launch>
+
+  <!-- Launch the gamepad -->
+  <include file="$(find autobot)/launch/teleop.launch"/>
+
+  <!-- Uncomment to enable by default -->
+  <include file="$(find autobot)/launch/camera.launch" />
+
+  <!-- Autonomous Sorter for Finding Cylinders -->
+  <node pkg="autobot" name="auto_driver" type="auto_driver.py" output="screen"/>
+
+  <!-- Autonomous Sorter for Cylinders -->
+  <node pkg="autobot" name="auto_sorter" type="auto_sorter.py" output="screen"/>
+
+
+</launch>

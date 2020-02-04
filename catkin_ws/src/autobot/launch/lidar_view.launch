@@ -1,0 +1,18 @@
+<!-- Launch lidar and rviz -->
+<!-- Adapted from: https://github.com/EAIBOT/ydlidar/blob/master/launch/lidar_view.launch -->
+
+<!-- Launch file equivalent to basically running these commands on terminal:
+        roslaunch lidar.launch
+        rviz
+-->
+<!-- To run: roslaunch autobot lidar_view.launch -->
+
+<launch>
+
+  <!-- launch lidar -->
+  <include file="$(find autobot)/launch/lidar.launch" />
+
+  <!-- launch rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find autobot)/rviz/lidar.rviz" />
+
+</launch>

@@ -1,0 +1,17 @@
+<!-- Launch kitware (WASD) to drive kitbot -->
+<!-- Adapted from: https://github.mit.edu/maslab-2020/kitware/blob/master/launch/kitware.launch -->
+
+<!-- Launch file equivalent to basically running these commands on terminal:
+        roscore
+	rosrun kitware kitbot.py
+	rosrun kitware kbd_driver.py
+-->
+<!-- To run: roslaunch autobot kitware.launch -->
+
+<launch>
+
+  <!-- kitware -->
+  <node pkg="kitware" name="kitbot" type="kitbot.py" />
+  <node pkg="kitware" name="kbd_driver" type="kbd_driver.py" />
+
+</launch>

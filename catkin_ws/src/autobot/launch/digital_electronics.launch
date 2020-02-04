@@ -1,0 +1,32 @@
+<!-- Manual testing. Launches all digital electronics onboard. -->
+
+<!-- Launch file equivalent to basically running these commands on terminal:
+        roslaunch autobot teleop.launch (separately, not included in this file:     joystick, drive motors x2)
+        roslaunch autobot camera.launch (separately, not included in this file:     camera_pub, camera_edit)
+
+        rosrun autobot intake_motor.py
+        rosrun autobot color_sensor.py
+        rosrun autobot dispenser_servo.py
+        rosrun autobot dispenser_motor.py
+        rosrun autobot pusher_motor.py
+-->
+<!-- To run: roslaunch autobot digital_electronics.launch -->
+
+<launch>
+
+    <!-- Intake Motor -->
+    <node pkg="autobot" name="intake_motor" type="intake_motor.py" output="screen"/>
+
+    <!-- Color Sensor -->
+    <!-- <node pkg="autobot" name="color_sensor" type="color_sensor.py" output="screen"/> -->
+
+    <!-- Dispenser Servo -->
+    <node pkg="autobot" name="dispenser_servo" type="dispenser_servo.py" output="screen"/>
+
+    <!-- Dispenser Motor -->
+    <node pkg="autobot" name="dispenser_motor" type="dispenser_motor.py" output="screen"/>
+
+    <!-- Pusher Motor -->
+    <node pkg="autobot" name="pusher_motor" type="pusher_motor.py" output="screen"/>
+
+</launch>

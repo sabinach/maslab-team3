@@ -1,0 +1,9 @@
+/home/maomao/Desktop/senior_IAP/maslab/apriltags3-py/apriltags/CMakeFiles/install/local.dir
+/home/maomao/Desktop/senior_IAP/maslab/apriltags3-py/apriltags/CMakeFiles/install.dir
+/home/maomao/Desktop/senior_IAP/maslab/apriltags3-py/apriltags/CMakeFiles/apriltag_demo.dir
+/home/maomao/Desktop/senior_IAP/maslab/apriltags3-py/apriltags/CMakeFiles/edit_cache.dir
+/home/maomao/Desktop/senior_IAP/maslab/apriltags3-py/apriltags/CMakeFiles/apriltag.dir
+/home/maomao/Desktop/senior_IAP/maslab/apriltags3-py/apriltags/CMakeFiles/install/strip.dir
+/home/maomao/Desktop/senior_IAP/maslab/apriltags3-py/apriltags/CMakeFiles/opencv_demo.dir
+/home/maomao/Desktop/senior_IAP/maslab/apriltags3-py/apriltags/CMakeFiles/rebuild_cache.dir
+/home/maomao/Desktop/senior_IAP/maslab/apriltags3-py/apriltags/CMakeFiles/list_install_components.dir
